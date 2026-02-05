@@ -1,0 +1,10 @@
+#
+# Mestrado em Engenharia de Segurança da Informação
+# Linguangem de programacao Dinamica - LPD - Python - Prof. Armando Ventura
+# Aluno: Lino Silva - 26714
+# Módulo: scaner.py - Solicita um endereço IP ou subrede e faz scan das portas disponviveis.
+# Exibe o resultao na tela
+# Criado em 05/02/2026
+# Historio de modificacoes:
+# 05/02/2026 - 
+# 

@@ -1,10 +1,15 @@
 #!/usr/bin/env python3
-"""
-LPD - Projeto de Segurança Informática
-Mestrado em Engenharia de Segurança da Informação
-Lino Silva - 26714
-Módulo principal (CLI)
-"""
+#
+# Mestrado em Engenharia de Segurança da Informação
+# Linguangem de programacao Dinamica - LPD - Python - Prof. Armando Ventura
+# Aluno: Lino Silva - 26714
+# Módulo: main.py - Modulo principal, exibe as opcoes do projeto e executa cada modulo separadamente
+# Exibe o resultao na tela
+# Criado em 03/02/2026
+# Historio de modificacoes:
+# 05/02/2026 - Inclusao do modulo (1) 
+# 
+from scanner import scanport
 
 def show_menu():
     print("\n==============================")
@@ -37,7 +42,7 @@ def main():
     if option == 0:
         print("A encerrar a aplicação.")
     elif option == 1:
-        print("Opção selecionada: Scanner de Portos de Rede")
+        scanport.run() 
     elif option == 2:
         print("Opção selecionada: Análise de Logs de Serviços")
     elif option == 3:
