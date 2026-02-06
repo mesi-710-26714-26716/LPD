@@ -13,6 +13,7 @@
 from scanner import scanport
 from analiselogs import analyzer
 from udpflood import udpdos
+from synflood import tcpflood
 
 def show_menu():
     print("\n==============================")
@@ -23,7 +24,7 @@ def show_menu():
     print("1 - Scanner de Portos de Rede")
     print("2 - Análise de Logs de Serviços")
     print("3 - UDP Flood para um IP")
-    print("4 - Port Knocking (SSH)")
+    print("4 - SYN Flood para um IP/Porta")
     print("5 - Password Manager")
     print("0 - Sair\n")
 
@@ -51,7 +52,7 @@ def main():
     elif option == 3:
         udpdos.run()
     elif option == 4:
-        print("Opção selecionada: Port Knocking (SSH)")
+        tcpflood.run()
     elif option == 5:
         print("Opção selecionada: Password Manager")
     else:
