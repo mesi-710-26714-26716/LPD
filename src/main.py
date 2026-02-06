@@ -8,8 +8,10 @@
 # Criado em 03/02/2026
 # Historio de modificacoes:
 # 05/02/2026 - Inclusao do modulo (1) 
+# 05/02/2026 - Inclusao do modulo (2)
 # 
 from scanner import scanport
+from analiselogs import analyzer
 
 def show_menu():
     print("\n==============================")
@@ -44,7 +46,7 @@ def main():
     elif option == 1:
         scanport.run() 
     elif option == 2:
-        print("Opção selecionada: Análise de Logs de Serviços")
+        analyzer.run()
     elif option == 3:
         print("Opção selecionada: Serviço de Mensagens Seguras")
     elif option == 4:
