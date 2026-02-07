@@ -8,6 +8,7 @@
 # Criado em 05/02/2026
 # Historio de modificacoes:
 # 05/02/2026 - Exibir o IP mesmo que nao tenha porta aberta ou IP for inalcansavel 
+# 07/02/2026 - Melhria no codigo para exibir as portass abertas durante o scan 
 # 
 import socket
 import ipaddress
