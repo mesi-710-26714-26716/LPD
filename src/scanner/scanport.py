@@ -17,32 +17,32 @@ COMMON_PORTS = [21, 22, 23, 25, 53, 80, 110, 139, 143, 443, 445, 3306, 8080]
 
 
 def scan_port(ip, port, timeout=0.5):
-    """
-    Tenta ligar a um porto TCP específico
-    """
     try:
         sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         sock.settimeout(timeout)
         result = sock.connect_ex((str(ip), port))
         sock.close()
-        return result == 0
-    except socket.error:
-        return False
 
+        if result == 0:
+            return "Aberta"
+        else:
+            return "Fechada"
+    except socket.timeout:
+        return "Sem resposta(pode estar bloqueada)"
+    except socket.error:
+        return "Erro"
 
 def scan_host(ip):
-    """
-    Scaneia os portos comuns de um host
-    Retorna lista de portos abertos (pode ser vazia)
-    """
     open_ports = []
 
     for port in COMMON_PORTS:
-        if scan_port(ip, port):
+        status = scan_port(ip, port)
+        print(f"{ip}:{port} -> {status}")
+
+        if status == "Aberta":
             open_ports.append(port)
 
     return open_ports
-
 
 def run():
     print("\n[ Scanner de Portos de Rede ]\n")
@@ -57,11 +57,12 @@ def run():
     print(f"\nInício do scan em: {network}\n")
 
     for ip in network.hosts():
+        print(f"\n--- Scan em {ip} ---")
         ports = scan_host(ip)
 
         if ports:
-            print(f"[+] {ip} -> Portos abertos: {ports}")
+            print(f"[+] {ip} -> Portos abertos encontrados: {ports}")
         else:
-            print(f"[-] {ip} -> Inacessível ou sem portas abertas")
+            print(f"[-] {ip} -> Nenhuma porta aberta detectada")
 
     print("\nScan concluído.\n")
