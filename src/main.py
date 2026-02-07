@@ -25,7 +25,7 @@ def show_menu():
     print("2 - Análise de Logs de Serviços")
     print("3 - UDP Flood para um IP")
     print("4 - SYN Flood para um IP/Porta")
-    print("5 - Password Manager")
+    print("5 - Sistema troca de mensagem")
     print("0 - Sair\n")
 
 
@@ -54,7 +54,9 @@ def main():
     elif option == 4:
         tcpflood.run()
     elif option == 5:
-        print("Opção selecionada: Password Manager")
+        print("Para executar este modulo é necessario abrir doi terminais.")
+        print("Execute o modulo messages/server.py em um e modulo messages/client.py em outro.")
+        print("Desta forma é possivel ver a troca de mensagem entre eles.")
     else:
         print("Opção inválida. Por favor execute novamente a aplicação.")
 
