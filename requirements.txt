@@ -1,0 +1,13 @@
+
+---
+
+## 3️⃣ requirements.txt – versão correta e final
+
+Este ficheiro está **100% alinhado com o Projeto.txt**:
+
+```txt
+geoip2
+maxminddb
+cryptography
+reportlab
+
